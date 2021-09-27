@@ -15,26 +15,19 @@ use the fonts in other ways in the font hierarchy etc. */
 /* change / delete some of these - note: all variables are listed twice */
 
 :root {
-  --bg-color: red;
-  --link-color: green;
-  --link-hover-color: blue;
-  --color-4: hotpink;
-  --color-5: rebeccapurple;
-
-  --primary-font: "Open Sans", sans-serif;
-  --secondary-font: "Droid Serif", serif;
-  --main-text-color: #000;
+  --header-background: #40000d;
+  --bg-color: #40000d;
+  --color: #94001e;
+  --color-1: #ff3129;
+  --color-4: #d1c5fa;
+  --color-5: #eee6d2;
+  --color-6: #dbfaa0;
+  --color-7: #aec77f;
+  --color-8: #b8cdfa;
 
   --white-space: 1rem;
-
-  --bg-color: #000;
-  --link-color: #000;
-  --link-hover-color: #000;
-  --color-4: #000;
-  --color-5: #000;
-
-  --primary-font: sans-serif;
-  --secondary-font: serif;
+  --primary-font: poppins, sans-serif;
+  --secondary-font: poppins light, sans-serif;
   --main-text-color: #000;
 
   --white-space: 2rem;
@@ -59,12 +52,15 @@ footer {
 }
 
 .full-width {
-  background: var(--bg-color);
+  background: var(--header-background);
   color: white;
   width: 100%;
 }
 
 .header-wrapper h1 {
+  font-family: normalidad-wide, sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -75,14 +71,14 @@ footer {
 
 .header-wrapper h2 {
   font-size: 1.6em;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-1);
   font-weight: bold;
   margin: var(--white-space) 0;
 }
 
 .header-wrapper h3 {
   font-size: 1.2rem;
-  font-style: italic;
+  font-style: inherit;
 }
 
 .header-wrapper h4 {
@@ -99,9 +95,8 @@ section {
 }
 
 .section-heading {
-  font-style: italic;
   font-size: 1.3rem;
-  color: #777;
+  color: rgb(0, 0, 0);
   margin: 0.5rem 0;
 }
 
@@ -125,11 +120,11 @@ ul li:last-child {
 }
 
 .color-swatch-2 {
-  background-color: var(--link-color);
+  background-color: var(--color);
 }
 
 .color-swatch-3 {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-1);
 }
 
 .color-swatch-4 {
@@ -140,6 +135,17 @@ ul li:last-child {
   background-color: var(--color-5);
 }
 
+.color-swatch-6 {
+  background-color: var(--color-6);
+}
+
+.color-swatch-7 {
+  background-color: var(--color-7);
+}
+.color-swatch-7 {
+  background-color: var(--color-8);
+}
+
 .textures li {
   height: 30vw;
   width: 40%;
@@ -147,7 +153,7 @@ ul li:last-child {
 }
 
 .texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
+  background: url(../img/pw_maze_white.png) top left;
 }
 
 .texture-swatch-2 {
@@ -181,34 +187,39 @@ ul li:last-child {
 
 button {
   padding: 1rem;
-  border-radius: 4px;
-  background: var(--link-color);
+  border-radius: 0px;
+  background-color: #d1c5fa;
   text-align: center;
   text-decoration: none;
-  font: bold 1.25em/1 var(--primary-font);
+  font-family: normalidad-wide, sans-serif;
   letter-spacing: 1px;
-  color: white;
+  color: #40000d;
   text-transform: uppercase;
-  text-shadow: 0px -1px 0px #0374a0;
+  border-color: var(--color-4);
   transition: all 0.2s ease;
   cursor: pointer;
   /* margin: 0 1rem 0 0; */
+  border-width: 3px;
 }
 
 .secondary-button {
-  background: var(--color-5);
+  background-color: #40000d;
+  color: #d1c5fa;
+  border-color: #40000d;
 }
 
 button:focus,
 button:active,
 button:focus-within {
   outline: 0;
-  border-radius: 4px;
+  /*border-radius: 4px;*/
 }
 
 button:hover {
-  background-color: var(--link-hover-color);
-  transform: scale(3) rotate(40deg);
+  /* background-color: var(--link-hover-color);*/
+  background-color: #40000d;
+  color: #d1c5fa;
+  border-color: #40000d;
 }
 
 button:active {
@@ -222,16 +233,19 @@ button:active {
 .h1-sample {
   font-size: 2.4rem;
   font-weight: bold;
+  font-family: normalidad-wide, sans-serif;
+  font-style: normal;
 }
 
 .h2-sample {
-  font-family: var(--secondary-font);
-  font-style: italic;
-  font-size: 1.25rem;
+  font-family: poppins, sans-serif;
+  font-size: 500rem;
+  /*font-style: normal;*/
+  font-size: 1.8rem;
 }
 
 p.typography-sample {
-  font-family: var(--secondary-font);
+  font-family: poppins light, sans-serif;
   line-height: 1.5;
   max-width: 960px;
 }
@@ -245,18 +259,18 @@ em {
 }
 
 a {
-  font-family: var(--primary-font);
-  color: var(--link-color);
+  font-family: poppins light, sans-serif;
+  color: var(--color-4);
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.2s;
+  /*transition: all 0.2s;*/
 }
 
 a:hover {
-  color: var(--link-hover-color);
-  font-size: 4rem;
-  background-color: var(--color-4);
-  opacity: 0.1;
+  color: var(--color-4);
+  font-size: 1.5rem;
+  background-color: var(--bg-color);
+  opacity: 1;
 }
 
 p[class*="font-details-"] {
@@ -264,13 +278,14 @@ p[class*="font-details-"] {
   /* margin-bottom: calc(2 * var(--white-space)); */
   margin-bottom: var(--white-space);
   font-size: 0.75rem;
-  font-family: var(--secondary-font);
-  color: #6f6f6f;
+  font-family: poppins light, sans-serif;
+  color: #000000;
 }
 
 .adjectives ul {
   font-size: 2rem;
-  opacity: 0.5;
+  color: var(--color-1);
+  font-family: normalidad, sans-serif;
 }
 
 .adjectives ul {
@@ -278,7 +293,9 @@ p[class*="font-details-"] {
 }
 
 footer {
-  font-style: italic;
+  font-style: normal;
+  font-family: poppins light, sans-serif;
+  color: #94001e;
 }
 
 @media (min-width: 800px) {
